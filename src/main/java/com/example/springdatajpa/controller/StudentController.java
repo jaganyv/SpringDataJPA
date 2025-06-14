@@ -40,4 +40,9 @@ public class StudentController {
         studentService.deleteAllStudents();
         return "Deleted All Students";
     }
+    @DeleteMapping("student/delete")
+    public String deleteStudents(){
+        studentService.deleteStudents();
+        return "Deletion Succesfull";
+    }
 }
