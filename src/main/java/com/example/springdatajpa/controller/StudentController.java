@@ -15,20 +15,26 @@ public class StudentController {
     public List<Student> getStudents() {
         return studentService.getStudents();
     }
+//    Create
     @GetMapping("/students/{rno}")
     public Student getStudent(@PathVariable int rno) {
         return studentService.getStudentByRno(rno);
     }
+//    add
     @PostMapping("/students")
     public Student addStudent(@RequestBody Student student) {
         studentService.addStudent(student);
         return student;
     }
+
+//    Update
     @PutMapping("/students")
     public Student updateStudent(@RequestBody Student student) {
         studentService.updateStudent(student);
         return student;
     }
+
+//    Delete
     @DeleteMapping("/students/{rno}")
     public String deleteStudent(@PathVariable int rno) {
         studentService.deleteStudentByRno(rno);
@@ -39,5 +45,11 @@ public class StudentController {
     public String deleteAllStudents() {
         studentService.deleteAllStudents();
         return "Deleted All Students";
+    }
+
+    //Method in Spring Data Jpa
+    @GetMapping("/students/technology/{tech}")
+    public List<Student> getStudentsByTechnology(@PathVariable("tech") String technology) {
+        return studentService.getStudentsByTechnology(technology);
     }
 }

@@ -4,6 +4,7 @@ import com.example.springdatajpa.model.Student;
 import com.example.springdatajpa.reposiroty.StudentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -34,5 +35,10 @@ public class StudentService {
 
     public void deleteAllStudents() {
         studentRepo.deleteAll();
+    }
+
+    //Method in Spring Data Jpa
+    public List<Student> getStudentsByTechnology(String technology) {
+        return studentRepo.findByTechnology(technology);
     }
 }
