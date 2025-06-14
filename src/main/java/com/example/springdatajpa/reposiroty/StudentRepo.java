@@ -11,8 +11,8 @@ public interface StudentRepo extends JpaRepository<Student,Integer> {
     //Method in Spring Data Jpa
     List<Student> findByTechnology(String technology);
 
-
-    @Query(value = "SELECT * FROM student WHERE gender = :gender AND technology = :technology", nativeQuery = true)
+// Native Query
+   @Query(value = "SELECT * FROM student WHERE gender = :gender AND technology = :technology", nativeQuery = true)
     List<Student> findByGenderAndTechnology(@Param("gender") String gender,
                                             @Param("technology") String technology);
 }

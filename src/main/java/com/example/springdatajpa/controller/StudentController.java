@@ -54,6 +54,7 @@ public class StudentController {
         return studentService.getStudentsByTechnology(technology);
     }
 
+//    Native Query
     @PostMapping("/students/filter")
     public List<Student> getStudentByGenderAndTechnology(@Param("gender") String gender,
                                                          @Param("technology") String technology) {

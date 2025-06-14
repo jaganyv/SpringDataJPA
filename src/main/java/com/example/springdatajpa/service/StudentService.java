@@ -42,6 +42,7 @@ public class StudentService {
         return studentRepo.findByTechnology(technology);
     }
 
+//    Native Query
     public List<Student> getStudentByGenderAndTechnology(String gender, String technology) {
         return studentRepo.findByGenderAndTechnology(gender, technology);
     }
